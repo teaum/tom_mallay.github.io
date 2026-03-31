@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teaum — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0f0f0f;
+      --surface:   #161616;
+      --border:    #282828;
+      --accent:    #c8a96e;   /* gold */
+      --accent2:   #4a7c6f;   /* teal */
+      --text:      #e8e4dc;
+      --muted:     #888;
+      --tag-bg:    #1e1e1e;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ─── NAV ─────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15,15,15,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 56px;
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+
+    /* ─── LAYOUT ──────────────────────────────── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 1.5rem 6rem;
+    }
+
+    /* ─── HERO ────────────────────────────────── */
+    .hero {
+      padding: 5rem 0 3.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 3.5rem;
+    }
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 1.4rem;
+      color: var(--text);
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-bio {
+      font-size: 0.97rem;
+      color: var(--muted);
+      max-width: 580px;
+      line-height: 1.75;
+    }
+
+    /* ─── SECTION ─────────────────────────────── */
+    section { margin-bottom: 3.5rem; }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ─── EXPERIENCE ──────────────────────────── */
+    .exp-item {
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .exp-item:last-child { border-bottom: none; }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.3rem;
+      flex-wrap: wrap;
+    }
+    .exp-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+    .exp-company {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    .exp-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      white-space: nowrap;
+      margin-top: 0.25rem;
+    }
+    .exp-bullets {
+      list-style: none;
+      margin-top: 0.7rem;
+    }
+    .exp-bullets li {
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding: 0.18rem 0 0.18rem 1.1rem;
+      position: relative;
+    }
+    .exp-bullets li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    /* ─── SKILLS GRID ─────────────────────────── */
+    .skills-group { margin-bottom: 1.5rem; }
+    .skills-group-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.05em;
+    }
+    .skills-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .chip {
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.73rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .chip:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ─── EDUCATION ───────────────────────────── */
+    .edu-item {
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .edu-item:last-child { border-bottom: none; }
+    .edu-degree {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+    .edu-school {
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin: 0.2rem 0 0.15rem;
+    }
+    .edu-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    /* ─── PROJECTS ────────────────────────────── */
+    .project-item {
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .project-item:last-child { border-bottom: none; }
+    .project-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 0.25rem;
+    }
+    .project-tags {
+      display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.55rem;
+    }
+    .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--accent2);
+      border: 1px solid var(--accent2);
+      padding: 0.15rem 0.5rem;
+      border-radius: 2px;
+      opacity: 0.85;
+    }
+    .project-desc {
+      font-size: 0.87rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ─── FOOTER ──────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+
+    /* ─── ANIMATIONS ──────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero, section {
+      animation: fadeUp 0.5s ease both;
+    }
+    section:nth-child(2) { animation-delay: 0.08s; }
+    section:nth-child(3) { animation-delay: 0.14s; }
+    section:nth-child(4) { animation-delay: 0.20s; }
+    section:nth-child(5) { animation-delay: 0.26s; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Teaum</a>
+  <ul class="nav-links">
+    <li><a href="#" class="active">Portfolio</a></li>
+    <li><a href="#">Finance</a></li>
+    <li><a href="#">Projects</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <p class="hero-eyebrow">Engineering student · Paris</p>
+    <h1>Teaum<br><em>Mathématiques &amp; Finance Quantitative</em></h1>
+    <p class="hero-bio">
+      Étudiant ingénieur à l'ENSIIE en double diplôme Mathématiques à l'Université Paris-Saclay.
+      Spécialisé en modélisation stochastique, pricing de dérivés et analyse fonctionnelle.
+      Intéressé par la finance quantitative, le machine learning et les méthodes numériques.
+    </p>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <p class="section-label">Expériences</p>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Internship — [Poste]</div>
+          <div class="exp-company">[Entreprise] · Paris, France</div>
+        </div>
+        <div class="exp-date">2025 – 2026</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>À compléter avec tes missions</li>
+        <li>Modélisation, pricing, développement…</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Recherche M1 — Missing Values in ML</div>
+          <div class="exp-company">LaMME, ENSIIE · Évry, France</div>
+        </div>
+        <div class="exp-date">2025</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Supervisé par Juhyun Park (LaMME, ENSIIE)</li>
+        <li>Étude des méthodes d'imputation et apprentissage supervisé sous données manquantes</li>
+        <li>Revue de littérature, implémentation et analyse comparative de méthodes statistiques</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <p class="section-label">Formation</p>
+
+    <div class="edu-item">
+      <div class="edu-degree">Diplôme d'ingénieur — ENSIIE</div>
+      <div class="edu-school">École Nationale Supérieure d'Informatique pour l'Industrie et l'Entreprise</div>
+      <div class="edu-date">2023 – 2026 · Évry, France</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">Master Mathématiques — Double diplôme</div>
+      <div class="edu-school">Université Paris-Saclay</div>
+      <div class="edu-date">2024 – 2026 · Paris, France</div>
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <p class="section-label">Projets</p>
+
+    <div class="project-item">
+      <div class="project-name">HJM + Lifted Heston — Calibration énergie</div>
+      <div class="project-tags">
+        <span class="tag">Stochastic Vol</span>
+        <span class="tag">HJM</span>
+        <span class="tag">SSVI</span>
+        <span class="tag">Python / HTML</span>
+      </div>
+      <p class="project-desc">
+        Simulation interactive basée sur Abi Jaber et al. (2025) pour la calibration de futures énergie.
+        Implémentation des trajectoires de variance stochastique, smiles SSVI, et analyse de sensibilité complète.
+      </p>
+    </div>
+
+    <div class="project-item">
+      <div class="project-name">Options Pricing &amp; Volatility Analysis</div>
+      <div class="project-tags">
+        <span class="tag">Implied Vol</span>
+        <span class="tag">Butterfly</span>
+        <span class="tag">Gamma P&amp;L</span>
+        <span class="tag">Python</span>
+      </div>
+      <p class="project-desc">
+        Étude approfondie du pricing d'options : approximation Brenner-Subrahmanyam, skew actions,
+        butterfly spreads et formule de Breeden-Litzenberger pour la densité risque-neutre.
+      </p>
+    </div>
+
+    <div class="project-item">
+      <div class="project-name">Analyse fonctionnelle — Espaces de Sobolev</div>
+      <div class="project-tags">
+        <span class="tag">PDE</span>
+        <span class="tag">H¹</span>
+        <span class="tag">Coercivité</span>
+        <span class="tag">LaTeX</span>
+      </div>
+      <p class="project-desc">
+        Preuves de complétude dans H¹, coercivité de formes bilinéaires, et régularité de solutions faibles.
+        Applications aux EDP elliptiques par intégration par parties.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <p class="section-label">Compétences</p>
+
+    <div class="skills-group">
+      <div class="skills-group-label">Langages</div>
+      <div class="skills-chips">
+        <span class="chip">Python</span>
+        <span class="chip">C</span>
+        <span class="chip">OCaml</span>
+        <span class="chip">SQL</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">HTML / CSS</span>
+        <span class="chip">LaTeX</span>
+      </div>
+    </div>
+
+    <div class="skills-group">
+      <div class="skills-group-label">Librairies & Outils</div>
+      <div class="skills-chips">
+        <span class="chip">NumPy</span>
+        <span class="chip">Pandas</span>
+        <span class="chip">SciPy</span>
+        <span class="chip">Matplotlib</span>
+        <span class="chip">Scikit-learn</span>
+        <span class="chip">Plotly</span>
+        <span class="chip">QuantLib</span>
+        <span class="chip">Git</span>
+      </div>
+    </div>
+
+    <div class="skills-group">
+      <div class="skills-group-label">Mathématiques</div>
+      <div class="skills-chips">
+        <span class="chip">Analyse fonctionnelle</span>
+        <span class="chip">EDP</span>
+        <span class="chip">Calcul stochastique</span>
+        <span class="chip">Finance mathématique</span>
+        <span class="chip">Optimisation</span>
+        <span class="chip">Statistiques</span>
+      </div>
+    </div>
+
+    <div class="skills-group">
+      <div class="skills-group-label">Langues</div>
+      <div class="skills-chips">
+        <span class="chip">Français — natif</span>
+        <span class="chip">Anglais — courant</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="container">
+  <footer>
+    <span>© 2026 Teaum. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+      <a href="mailto:ton@email.com">Email</a>
+      <a href="https://github.com" target="_blank">GitHub</a>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>
