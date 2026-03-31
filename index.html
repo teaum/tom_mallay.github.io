@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Teaum — Portfolio</title>
+  <title>Tom Mallay — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -13,8 +13,8 @@
       --bg:        #0f0f0f;
       --surface:   #161616;
       --border:    #282828;
-      --accent:    #c8a96e;   /* gold */
-      --accent2:   #4a7c6f;   /* teal */
+      --accent:    #c8a96e;
+      --accent2:   #4a7c6f;
       --text:      #e8e4dc;
       --muted:     #888;
       --tag-bg:    #1e1e1e;
@@ -31,7 +31,6 @@
       min-height: 100vh;
     }
 
-    /* ─── NAV ─────────────────────────────────── */
     nav {
       position: sticky;
       top: 0;
@@ -64,14 +63,12 @@
     }
     .nav-links a:hover, .nav-links a.active { color: var(--text); }
 
-    /* ─── LAYOUT ──────────────────────────────── */
     .container {
       max-width: 780px;
       margin: 0 auto;
       padding: 0 1.5rem 6rem;
     }
 
-    /* ─── HERO ────────────────────────────────── */
     .hero {
       padding: 5rem 0 3.5rem;
       border-bottom: 1px solid var(--border);
@@ -93,10 +90,7 @@
       margin-bottom: 1.4rem;
       color: var(--text);
     }
-    .hero h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
     .hero-bio {
       font-size: 0.97rem;
       color: var(--muted);
@@ -104,7 +98,6 @@
       line-height: 1.75;
     }
 
-    /* ─── SECTION ─────────────────────────────── */
     section { margin-bottom: 3.5rem; }
 
     .section-label {
@@ -125,13 +118,11 @@
       background: var(--border);
     }
 
-    /* ─── EXPERIENCE ──────────────────────────── */
     .exp-item {
       padding: 1.4rem 0;
       border-bottom: 1px solid var(--border);
     }
     .exp-item:last-child { border-bottom: none; }
-
     .exp-header {
       display: flex;
       justify-content: space-between;
@@ -159,10 +150,7 @@
       white-space: nowrap;
       margin-top: 0.25rem;
     }
-    .exp-bullets {
-      list-style: none;
-      margin-top: 0.7rem;
-    }
+    .exp-bullets { list-style: none; margin-top: 0.7rem; }
     .exp-bullets li {
       font-size: 0.88rem;
       color: var(--muted);
@@ -178,7 +166,6 @@
       line-height: 1.5;
     }
 
-    /* ─── SKILLS GRID ─────────────────────────── */
     .skills-group { margin-bottom: 1.5rem; }
     .skills-group-label {
       font-size: 0.75rem;
@@ -187,11 +174,7 @@
       margin-bottom: 0.6rem;
       letter-spacing: 0.05em;
     }
-    .skills-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
+    .skills-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .chip {
       background: var(--tag-bg);
       border: 1px solid var(--border);
@@ -202,12 +185,8 @@
       border-radius: 2px;
       transition: border-color 0.2s, color 0.2s;
     }
-    .chip:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
+    .chip:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* ─── EDUCATION ───────────────────────────── */
     .edu-item {
       padding: 1.2rem 0;
       border-bottom: 1px solid var(--border);
@@ -218,48 +197,42 @@
       font-size: 1rem;
       font-weight: 400;
     }
-    .edu-school {
-      font-size: 0.85rem;
-      color: var(--accent);
-      margin: 0.2rem 0 0.15rem;
-    }
+    .edu-school { font-size: 0.85rem; color: var(--accent); margin: 0.2rem 0 0.15rem; }
     .edu-date {
       font-family: 'DM Mono', monospace;
       font-size: 0.7rem;
       color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+    .edu-bullets { list-style: none; margin-top: 0.5rem; }
+    .edu-bullets li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding: 0.12rem 0 0.12rem 1.1rem;
+      position: relative;
+    }
+    .edu-bullets li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--accent2);
+      font-size: 1.1rem;
+      line-height: 1.5;
     }
 
-    /* ─── PROJECTS ────────────────────────────── */
-    .project-item {
-      padding: 1.4rem 0;
+    .interest-item {
+      padding: 1rem 0;
       border-bottom: 1px solid var(--border);
     }
-    .project-item:last-child { border-bottom: none; }
-    .project-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1rem;
-      font-weight: 400;
-      margin-bottom: 0.25rem;
+    .interest-item:last-child { border-bottom: none; }
+    .interest-title {
+      font-size: 0.88rem;
+      color: var(--text);
+      font-weight: 500;
+      margin-bottom: 0.2rem;
     }
-    .project-tags {
-      display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.55rem;
-    }
-    .tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      color: var(--accent2);
-      border: 1px solid var(--accent2);
-      padding: 0.15rem 0.5rem;
-      border-radius: 2px;
-      opacity: 0.85;
-    }
-    .project-desc {
-      font-size: 0.87rem;
-      color: var(--muted);
-      line-height: 1.65;
-    }
+    .interest-desc { font-size: 0.84rem; color: var(--muted); }
 
-    /* ─── FOOTER ──────────────────────────────── */
     footer {
       border-top: 1px solid var(--border);
       margin-top: 4rem;
@@ -283,206 +256,181 @@
     }
     .footer-links a:hover { color: var(--accent); }
 
-    /* ─── ANIMATIONS ──────────────────────────── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(18px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    .hero, section {
-      animation: fadeUp 0.5s ease both;
-    }
+    .hero, section { animation: fadeUp 0.5s ease both; }
     section:nth-child(2) { animation-delay: 0.08s; }
     section:nth-child(3) { animation-delay: 0.14s; }
     section:nth-child(4) { animation-delay: 0.20s; }
     section:nth-child(5) { animation-delay: 0.26s; }
+    section:nth-child(6) { animation-delay: 0.32s; }
   </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="#">Teaum</a>
+  <a class="nav-logo" href="#">Tom Mallay</a>
   <ul class="nav-links">
     <li><a href="#" class="active">Portfolio</a></li>
-    <li><a href="#">Finance</a></li>
-    <li><a href="#">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
   </ul>
 </nav>
 
 <div class="container">
 
-  <!-- HERO -->
   <div class="hero">
-    <p class="hero-eyebrow">Engineering student · Paris</p>
-    <h1>Teaum<br><em>Mathématiques &amp; Finance Quantitative</em></h1>
+    <p class="hero-eyebrow">Engineering Student · Paris</p>
+    <h1>Tom Mallay<br><em>Quantitative Finance &amp; Engineering</em></h1>
     <p class="hero-bio">
-      Étudiant ingénieur à l'ENSIIE en double diplôme Mathématiques à l'Université Paris-Saclay.
-      Spécialisé en modélisation stochastique, pricing de dérivés et analyse fonctionnelle.
-      Intéressé par la finance quantitative, le machine learning et les méthodes numériques.
+      Engineering student at ENSIIE with a double degree in Mathematics at Paris-Saclay University.
+      Exchange semester at the Università degli Studi di Firenze focused on quantitative finance.
+      Passionate about trading, blockchain technology and data-driven methods applied to finance.
     </p>
   </div>
 
-  <!-- EXPERIENCE -->
   <section id="experience">
-    <p class="section-label">Expériences</p>
+    <p class="section-label">Experience</p>
 
     <div class="exp-item">
       <div class="exp-header">
         <div>
-          <div class="exp-title">Internship — [Poste]</div>
-          <div class="exp-company">[Entreprise] · Paris, France</div>
+          <div class="exp-title">Asset Management Intern</div>
+          <div class="exp-company">Banque Populaire · Nantes, France</div>
         </div>
-        <div class="exp-date">2025 – 2026</div>
+        <div class="exp-date">May – Jul. 2025</div>
       </div>
       <ul class="exp-bullets">
-        <li>À compléter avec tes missions</li>
-        <li>Modélisation, pricing, développement…</li>
+        <li>Developed VBA code to calculate 16 Principal Adverse Impacts (PAI) for annual and quarterly ESG reporting</li>
+        <li>Managed differentiated workflows for OPC, individual securities and life insurance portfolios</li>
+        <li>Implemented algorithms for performance tracking and position monitoring</li>
+        <li>Additional experience as sales assistant in the trading room (€4M in revenue)</li>
       </ul>
     </div>
 
     <div class="exp-item">
       <div class="exp-header">
         <div>
-          <div class="exp-title">Recherche M1 — Missing Values in ML</div>
-          <div class="exp-company">LaMME, ENSIIE · Évry, France</div>
+          <div class="exp-title">Private Tutor — Mathematics &amp; Physics</div>
+          <div class="exp-company">Complétude · Paris, France</div>
         </div>
-        <div class="exp-date">2025</div>
+        <div class="exp-date">2024 – 2025</div>
       </div>
       <ul class="exp-bullets">
-        <li>Supervisé par Juhyun Park (LaMME, ENSIIE)</li>
-        <li>Étude des méthodes d'imputation et apprentissage supervisé sous données manquantes</li>
-        <li>Revue de littérature, implémentation et analyse comparative de méthodes statistiques</li>
+        <li>Provided personalized academic support in mathematics and physics</li>
+        <li>Designed lesson plans and explained complex concepts to improve student performance</li>
       </ul>
     </div>
 
   </section>
 
-  <!-- EDUCATION -->
   <section id="education">
-    <p class="section-label">Formation</p>
+    <p class="section-label">Education</p>
 
     <div class="edu-item">
-      <div class="edu-degree">Diplôme d'ingénieur — ENSIIE</div>
+      <div class="edu-degree">Master's Degree in Engineering — ENSIIE</div>
       <div class="edu-school">École Nationale Supérieure d'Informatique pour l'Industrie et l'Entreprise</div>
-      <div class="edu-date">2023 – 2026 · Évry, France</div>
+      <div class="edu-date">2024 – 2027 · Évry, France</div>
+      <ul class="edu-bullets">
+        <li>Double degree in Mathematics, Paris-Saclay University (June 2025)</li>
+        <li>Probability, topology, finance, statistics, quantitative finance, portfolio theory, derivatives</li>
+      </ul>
     </div>
 
     <div class="edu-item">
-      <div class="edu-degree">Master Mathématiques — Double diplôme</div>
-      <div class="edu-school">Université Paris-Saclay</div>
-      <div class="edu-date">2024 – 2026 · Paris, France</div>
+      <div class="edu-degree">Exchange Program — Quantitative Finance</div>
+      <div class="edu-school">Università degli Studi di Firenze</div>
+      <div class="edu-date">2025 · Florence, Italy</div>
+      <ul class="edu-bullets">
+        <li>Quantitative Finance, Derivatives, Algorithmic Finance, Corporate Finance, Portfolio Theory, Bond Markets</li>
+      </ul>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">Classe Préparatoire MPSI/MP</div>
+      <div class="edu-school">Lycée Henri Bergson</div>
+      <div class="edu-date">2022 – 2024 · Angers, France</div>
+      <ul class="edu-bullets">
+        <li>Intensive preparation for competitive entrance exams to top French engineering schools</li>
+        <li>Mathematics, Physics, Python, Engineering Sciences</li>
+      </ul>
     </div>
 
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <p class="section-label">Projets</p>
-
-    <div class="project-item">
-      <div class="project-name">HJM + Lifted Heston — Calibration énergie</div>
-      <div class="project-tags">
-        <span class="tag">Stochastic Vol</span>
-        <span class="tag">HJM</span>
-        <span class="tag">SSVI</span>
-        <span class="tag">Python / HTML</span>
-      </div>
-      <p class="project-desc">
-        Simulation interactive basée sur Abi Jaber et al. (2025) pour la calibration de futures énergie.
-        Implémentation des trajectoires de variance stochastique, smiles SSVI, et analyse de sensibilité complète.
-      </p>
-    </div>
-
-    <div class="project-item">
-      <div class="project-name">Options Pricing &amp; Volatility Analysis</div>
-      <div class="project-tags">
-        <span class="tag">Implied Vol</span>
-        <span class="tag">Butterfly</span>
-        <span class="tag">Gamma P&amp;L</span>
-        <span class="tag">Python</span>
-      </div>
-      <p class="project-desc">
-        Étude approfondie du pricing d'options : approximation Brenner-Subrahmanyam, skew actions,
-        butterfly spreads et formule de Breeden-Litzenberger pour la densité risque-neutre.
-      </p>
-    </div>
-
-    <div class="project-item">
-      <div class="project-name">Analyse fonctionnelle — Espaces de Sobolev</div>
-      <div class="project-tags">
-        <span class="tag">PDE</span>
-        <span class="tag">H¹</span>
-        <span class="tag">Coercivité</span>
-        <span class="tag">LaTeX</span>
-      </div>
-      <p class="project-desc">
-        Preuves de complétude dans H¹, coercivité de formes bilinéaires, et régularité de solutions faibles.
-        Applications aux EDP elliptiques par intégration par parties.
-      </p>
-    </div>
-
-  </section>
-
-  <!-- SKILLS -->
   <section id="skills">
-    <p class="section-label">Compétences</p>
+    <p class="section-label">Skills</p>
 
     <div class="skills-group">
-      <div class="skills-group-label">Langages</div>
+      <div class="skills-group-label">Programming Languages</div>
       <div class="skills-chips">
         <span class="chip">Python</span>
         <span class="chip">C</span>
-        <span class="chip">OCaml</span>
         <span class="chip">SQL</span>
-        <span class="chip">JavaScript</span>
-        <span class="chip">HTML / CSS</span>
-        <span class="chip">LaTeX</span>
+        <span class="chip">OCaml</span>
+        <span class="chip">VBA</span>
+        <span class="chip">HTML</span>
+        <span class="chip">CSS</span>
       </div>
     </div>
 
     <div class="skills-group">
-      <div class="skills-group-label">Librairies & Outils</div>
+      <div class="skills-group-label">Python Libraries</div>
       <div class="skills-chips">
-        <span class="chip">NumPy</span>
         <span class="chip">Pandas</span>
-        <span class="chip">SciPy</span>
-        <span class="chip">Matplotlib</span>
-        <span class="chip">Scikit-learn</span>
-        <span class="chip">Plotly</span>
-        <span class="chip">QuantLib</span>
-        <span class="chip">Git</span>
+        <span class="chip">NumPy</span>
       </div>
     </div>
 
     <div class="skills-group">
-      <div class="skills-group-label">Mathématiques</div>
+      <div class="skills-group-label">Languages</div>
       <div class="skills-chips">
-        <span class="chip">Analyse fonctionnelle</span>
-        <span class="chip">EDP</span>
-        <span class="chip">Calcul stochastique</span>
-        <span class="chip">Finance mathématique</span>
-        <span class="chip">Optimisation</span>
-        <span class="chip">Statistiques</span>
+        <span class="chip">French — Native</span>
+        <span class="chip">English — Fluent</span>
       </div>
+    </div>
+  </section>
+
+  <section id="interests">
+    <p class="section-label">Activities &amp; Interests</p>
+
+    <div class="interest-item">
+      <div class="interest-title">Blockchain &amp; Crypto</div>
+      <div class="interest-desc">Investing in cryptocurrencies (Bitcoin, Solana, ASI…) via a decentralized wallet; studying blockchain technology with the Kryptosphere association.</div>
     </div>
 
-    <div class="skills-group">
-      <div class="skills-group-label">Langues</div>
-      <div class="skills-chips">
-        <span class="chip">Français — natif</span>
-        <span class="chip">Anglais — courant</span>
-      </div>
+    <div class="interest-item">
+      <div class="interest-title">Personal Trading</div>
+      <div class="interest-desc">Trading across multiple asset classes — indices, forex, crypto, metals; spot and futures.</div>
     </div>
+
+    <div class="interest-item">
+      <div class="interest-title">FinancIIE — Finance Association</div>
+      <div class="interest-desc">Interviewing financial professionals covering many aspects of the industry.</div>
+    </div>
+
+    <div class="interest-item">
+      <div class="interest-title">Data Science</div>
+      <div class="interest-desc">Learning data-driven methods within a student association to apply them to academic and financial projects.</div>
+    </div>
+
+    <div class="interest-item">
+      <div class="interest-title">Sports</div>
+      <div class="interest-desc">Handball (12 years), BMX Race (8 years), Running (5 years).</div>
+    </div>
+
   </section>
 
 </div>
 
 <div class="container">
   <footer>
-    <span>© 2026 Teaum. All rights reserved.</span>
+    <span>© 2025 Tom Mallay. All rights reserved.</span>
     <div class="footer-links">
-      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-      <a href="mailto:ton@email.com">Email</a>
-      <a href="https://github.com" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/tom-mallay" target="_blank">LinkedIn</a>
+      <a href="mailto:tom.mallay@icloud.com">Email</a>
     </div>
   </footer>
 </div>
