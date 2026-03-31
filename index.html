@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
+
     :root {
       --bg:        #0f0f0f;
       --surface:   #161616;
@@ -19,9 +19,9 @@
       --muted:     #888;
       --tag-bg:    #1e1e1e;
     }
- 
+
     html { scroll-behavior: smooth; }
- 
+
     body {
       background: var(--bg);
       color: var(--text);
@@ -30,7 +30,7 @@
       line-height: 1.7;
       min-height: 100vh;
     }
- 
+
     nav {
       position: sticky;
       top: 0;
@@ -62,13 +62,13 @@
       transition: color 0.2s;
     }
     .nav-links a:hover, .nav-links a.active { color: var(--text); }
- 
+
     .container {
       max-width: 780px;
       margin: 0 auto;
       padding: 0 1.5rem 6rem;
     }
- 
+
     .hero {
       padding: 5rem 0 3.5rem;
       border-bottom: 1px solid var(--border);
@@ -97,9 +97,9 @@
       max-width: 580px;
       line-height: 1.75;
     }
- 
+
     section { margin-bottom: 3.5rem; }
- 
+
     .section-label {
       font-family: 'DM Mono', monospace;
       font-size: 0.68rem;
@@ -117,7 +117,7 @@
       height: 1px;
       background: var(--border);
     }
- 
+
     .exp-item {
       padding: 1.4rem 0;
       border-bottom: 1px solid var(--border);
@@ -165,7 +165,7 @@
       font-size: 1.1rem;
       line-height: 1.5;
     }
- 
+
     .skills-group { margin-bottom: 1.5rem; }
     .skills-group-label {
       font-size: 0.75rem;
@@ -186,7 +186,7 @@
       transition: border-color 0.2s, color 0.2s;
     }
     .chip:hover { border-color: var(--accent); color: var(--accent); }
- 
+
     .edu-item {
       padding: 1.2rem 0;
       border-bottom: 1px solid var(--border);
@@ -219,7 +219,7 @@
       font-size: 1.1rem;
       line-height: 1.5;
     }
- 
+
     .interest-item {
       padding: 1rem 0;
       border-bottom: 1px solid var(--border);
@@ -232,7 +232,7 @@
       margin-bottom: 0.2rem;
     }
     .interest-desc { font-size: 0.84rem; color: var(--muted); }
- 
+
     footer {
       border-top: 1px solid var(--border);
       margin-top: 4rem;
@@ -255,7 +255,7 @@
       transition: color 0.2s;
     }
     .footer-links a:hover { color: var(--accent); }
- 
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(18px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -269,7 +269,7 @@
   </style>
 </head>
 <body>
- 
+
 <nav>
   <a class="nav-logo" href="#">Tom Mallay</a>
   <ul class="nav-links">
@@ -278,9 +278,9 @@
     <li><a href="#education">Education</a></li>
   </ul>
 </nav>
- 
+
 <div class="container">
- 
+
   <div class="hero">
     <p class="hero-eyebrow">Engineering Student · Paris</p>
     <h1>Tom Mallay<br><em>Quantitative Finance &amp; Engineering</em></h1>
@@ -290,10 +290,10 @@
       Passionate about trading, blockchain technology and data-driven methods applied to finance.
     </p>
   </div>
- 
+
   <section id="experience">
     <p class="section-label">Experience</p>
- 
+
     <div class="exp-item">
       <div class="exp-header">
         <div>
@@ -309,7 +309,7 @@
         <li>Additional experience as sales assistant in the trading room (€4M in revenue)</li>
       </ul>
     </div>
- 
+
     <div class="exp-item">
       <div class="exp-header">
         <div>
@@ -323,12 +323,12 @@
         <li>Designed lesson plans and explained complex concepts to improve student performance</li>
       </ul>
     </div>
- 
+
   </section>
- 
+
   <section id="education">
     <p class="section-label">Education</p>
- 
+
     <div class="edu-item">
       <div class="edu-degree">Master's Degree in Engineering — ENSIIE</div>
       <div class="edu-school">École Nationale Supérieure d'Informatique pour l'Industrie et l'Entreprise</div>
@@ -338,7 +338,7 @@
         <li>Probability, topology, finance, statistics, quantitative finance, portfolio theory, derivatives</li>
       </ul>
     </div>
- 
+
     <div class="edu-item">
       <div class="edu-degree">Exchange Program — Quantitative Finance</div>
       <div class="edu-school">Università degli Studi di Firenze</div>
@@ -347,7 +347,7 @@
         <li>Quantitative Finance, Derivatives, Algorithmic Finance, Corporate Finance, Portfolio Theory, Bond Markets</li>
       </ul>
     </div>
- 
+
     <div class="edu-item">
       <div class="edu-degree">Classe Préparatoire MPSI/MP</div>
       <div class="edu-school">Lycée Henri Bergson</div>
@@ -357,12 +357,12 @@
         <li>Mathematics, Physics, Python, Engineering Sciences</li>
       </ul>
     </div>
- 
+
   </section>
- 
+
   <section id="skills">
     <p class="section-label">Skills</p>
- 
+
     <div class="skills-group">
       <div class="skills-group-label">Programming Languages</div>
       <div class="skills-chips">
@@ -375,7 +375,7 @@
         <span class="chip">CSS</span>
       </div>
     </div>
- 
+
     <div class="skills-group">
       <div class="skills-group-label">Python Libraries</div>
       <div class="skills-chips">
@@ -383,7 +383,7 @@
         <span class="chip">NumPy</span>
       </div>
     </div>
- 
+
     <div class="skills-group">
       <div class="skills-group-label">Languages</div>
       <div class="skills-chips">
@@ -392,39 +392,39 @@
       </div>
     </div>
   </section>
- 
+
   <section id="interests">
     <p class="section-label">Activities &amp; Interests</p>
- 
+
     <div class="interest-item">
       <div class="interest-title">Blockchain &amp; Crypto</div>
       <div class="interest-desc">Investing in cryptocurrencies (Bitcoin, Solana, ASI…) via a decentralized wallet; studying blockchain technology with the Kryptosphere association.</div>
     </div>
- 
+
     <div class="interest-item">
       <div class="interest-title">Personal Trading</div>
       <div class="interest-desc">Trading across multiple asset classes — indices, forex, crypto, metals; spot and futures.</div>
     </div>
- 
+
     <div class="interest-item">
       <div class="interest-title">FinancIIE — Finance Association</div>
       <div class="interest-desc">Interviewing financial professionals covering many aspects of the industry.</div>
     </div>
- 
+
     <div class="interest-item">
       <div class="interest-title">Data Science</div>
       <div class="interest-desc">Learning data-driven methods within a student association to apply them to academic and financial projects.</div>
     </div>
- 
+
     <div class="interest-item">
       <div class="interest-title">Sports</div>
       <div class="interest-desc">Handball (12 years), BMX Race (8 years), Running (5 years).</div>
     </div>
- 
+
   </section>
- 
+
 </div>
- 
+
 <div class="container">
   <footer>
     <span>© 2025 Tom Mallay. All rights reserved.</span>
@@ -434,6 +434,6 @@
     </div>
   </footer>
 </div>
- 
+
 </body>
 </html>
